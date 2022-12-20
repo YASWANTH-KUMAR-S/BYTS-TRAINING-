@@ -1,0 +1,46 @@
+//MAJOITY ELEMENTS
+class Solution {
+    public int majorityElement(int[] nums) {
+        Arrays.sort(nums);
+        return nums[nums.length/2];
+}}
+
+//MAJORITY ELEMENTS -II
+class Solution {
+    public List<Integer> majorityElement(int[] nums) {
+       int n = nums.length/3;
+Arrays.sort(nums);
+List l = new ArrayList<>();
+for (int i = 0; i < nums.length; i ++ ) {
+if ((i+n) < nums.length && nums[i+n]== nums[i]) {
+if (!l.contains(nums[i])) l.add(nums[i]);
+i = i + n;
+}
+}
+return l;
+}
+}
+//DUPLICATE ELEMENTS
+class Solution {
+    public int findDuplicate(int[] nums) {
+         int n = nums.length;
+    int slow = n;
+    int fast = n;
+    do{
+        slow = nums[slow-1];
+        fast = nums[nums[fast-1]-1];
+    }while(slow != fast);
+    slow = n;
+    while(slow != fast){
+        slow = nums[slow-1];
+        fast = nums[fast-1];
+    }
+    return slow;}
+}
+
+//SORT COLORS
+class Solution {
+    public void sortColors(int[] nums) {
+        Arrays.sort(nums);
+    }
+}
